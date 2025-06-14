@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Floris Kappen",
   desc: "A blog",
   title: "floris.zip",
-  ogImage: "og-image.jpg",
+  ogImage: "og-image.webp",
   lightAndDarkMode: true,
   postPerPage: 5,
 };

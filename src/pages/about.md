@@ -19,4 +19,4 @@ i also like other normal human being things that together kind of form my identi
 
 but i guess i put coding first because most people that have blogs will state their profession since their blogs usually serve as a way for them to further their career. that is not the purpose of this blog though, so the actual reason i put coding first is because wether i want to admit it or not it is a pretty big part of my life right now and most of my personal output consists of coding projects at the as of writing this on 9 jul 2023
 
-![hi it's me](/og-image.jpeg)
+![hi it's me](/og-image.webp)
