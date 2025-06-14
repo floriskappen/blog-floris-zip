@@ -7,10 +7,10 @@ tags:
   - life
 pubDatetime: 2023-07-16T15:12:00Z
 ogImage: ""
-description: After learning the basics of web dev, I started working on my first big project. It's cool enough to share.
+description: Parasocial relationships
 ---
 
-Recently, I was watching a [video parasocial relationships](https://www.youtube.com/watch?v=u2Iy-WKeZrU), particularly prevalent in East Asia. The concept pivots on our inherent tendency to form connections with individuals we regularly encounter—a leftover trait from our caveman era when bonding with tribe members was crucial for survival. Now, in the age of ubiquitous internet connectivity, we can follow virtually anyone online, providing us with an overwhelming number of potential connections with people that will never even know we exist.
+Recently, I was watching a [video parasocial relationships](https://www.youtube.com/watch?v=u2Iy-WKeZrU) in East Asia. The concept pivots on our inherent tendency to form connections with individuals we regularly encounter—a leftover trait from our caveman era when bonding with tribe members was crucial for survival. Now, in the age of ubiquitous internet connectivity, we can follow virtually anyone online, providing us with an overwhelming number of potential connections with people that will never even know we exist.
 
 This new paradigm has led to a significant shift in the way we form our world view. A deluge of discourse has already existed for years around how television, the internet, and social media can distort our perception of reality. To bring this concept closer to home, let's use YouTube consumption as an example. Like many, I often find myself invested in various YouTubers. I respect some, look up to others, and hold opinions about many. Some serve as sources of inspiration. However, not everyone can carve a niche for themselves on YouTube.
 
