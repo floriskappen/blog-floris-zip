@@ -1,5 +1,5 @@
 ---
-title: Creating a game without an engine
+title: creating a game without an engine
 author: Floris
 featured: false
 draft: false
@@ -7,75 +7,71 @@ tags:
   - game-development
 pubDatetime: 2021-04-15T20:47:52.756Z
 ogImage: ""
-description: When I wanted to create my first game, I only had a background in web development. I wanted to create a game in Javascript, so I chose Phaser for my first project.
+description: i tried to recreate smash bros in javascript using phaser - with pixel art, controller support, hit effects, and way too much code in one file.
 ---
 
-_Worked on it from 14 Jan 2020 to 19 Feb 2020 during school_
+_worked on it from 14 jan 2020 to 19 feb 2020 during school_
 
-# Creating a game without an engine
+# creating a game without an engine
 
-When I wanted to create my first game, I only had a background in web development. I wanted to create a game in Javascript, so I chose [Phaser](https://phaser.io/) for my first project, which is a game **framework**, not an **engine**. Which means you don't have a UI where you can click some scenes together and import your assets by dragging and dropping them.
+when i wanted to create my first game, my background was mainly web development. since i wanted to make a game in javascript, i picked [phaser](https://phaser.io/) for my first project, which is a game **framework**, not an **engine**. this means it doesn't have a ui where you can just click scenes together and drag-and-drop your assets.
 
-## Table of contents
+## first impressions
 
-## First impressions
+phaser took some getting used to, but the documentation was pretty solid once i figured out how to navigate it. i really enjoyed scripting every part of the game myself, instead of relying on prebuilt objects like i would’ve had to do with [unity](https://unity.com/).
 
-It took some getting used to the framework, but the documentation was decent once I understood how to navigate it. I really enjoyed the fact that I am scripting every part of the game, instead of using all types of prebuilt objects like I would have in [Unity](https://unity.com/).
+it genuinely felt like i was building something from scratch, even though phaser already included almost everything i needed, like physics and scene management. for someone new to game development, this was a super cool experience. phaser also has plenty of examples for all its features, making it really easy to find snippets of code whenever i needed something specific.
 
-It really felt like I was building things from scratch, even though Phaser already included nearly everything I needed, like Physics and scene management. For a first-timer it was a cool experience to say the least. Phaser also has a lot of examples for all the features it includes so it was really easy to find code snippets for specific features I wanted to use.
+### organisation issues
 
-### Organisation issues
+as the project grew, it became harder and harder to keep everything organized. i had lots of assets to import and had to assign unique ids (uids) to each one, making the files handling this part really messy and huge. i'm sure there were probably better ways to organize it all that i simply didn't know about at the time.
 
-As the project got bigger it kept getting harder and harder to keep everything organized. I had a lot of assets to import and assign UID's to so the files where that happened were getting extremely big. I think there are probably really nice ways to keep everything organized that I didn't know about though.
+here’s an example file where i kept track of all the uids. nearly everything -- from images to individual animations -- needed a unique string identifier. that's why the file became so enormous even though the game itself wasn't super big yet.
 
-This is a file where I kept track of all the UID's in the game. You need a unique string for almost everything from images to individual animations... so that's why it's so huge even though the game isn't super big yet.
+![CST](https://i.imgur.com/8imNQS1.gif)
 
-![CST](https://i.postimg.cc/9Xg8QwYx/vof9-FW3-Skr.gif)
+## the game idea
 
-## The game idea
+my idea was essentially a smash bros clone. it was purely for fun and learning, so i didn't really think about whether it would be viable as a public release. i just wanted to create something enjoyable and within my abilities.
 
-My idea was to basically build a smash clone. It was for fun and to learn so I didn't really think about how viable my idea would be if I were to actually put the game out there. I just wanted to create something I would enjoy, and that was within my reach.
+you'd pick a game mode, select a character and a stage, and then fight on that stage by knocking your opponent sideways until they're out of camera view. once knocked out, they'd lose a life and respawn at the center of the stage.
 
-You would select a gamemode, then a character and a stage. The objective was to brawl it out on the stage, knocking the oponent to the side until they are out of the camera's view, at which point they would loose a life and respawn in the middle of the stage.
+## i'm not an artist
 
-## I'm not an artist
+i decided on a pixel-art style since i thought it would be easiest for me. but this is where i hit a problem -- one i still hadn't solved by 2021 -- which is that while i really enjoy coding and designing games, i don't enjoy creating art at all.
 
-I decided to go for a pixel art style, because I though it would be easiest for me to create. But I ran into a problem I still haven't figured out a solution for in 2021... which is that I really enjoy writing code and designing the game, but I don't really enjoy creating art for it.
-
-I created the first stage which I'm quite proud of though.
+still, i managed to make the first stage myself, which i'm quite proud of.
 
 ![stage-1](https://i.imgur.com/tsBy7fl.png)
 
-I also created some dash effects, but the rest of the assets are all from [OpenGameArt](https://opengameart.org/) or from some people from my school that I asked for help.
+i also made some dash effects, but almost all the other assets were from [opengameart](https://opengameart.org/) or made by friends from school whom i asked for help.
 
-As I said I still struggle with that problem as of writing this in 2021, where I depend too much on artists to create a game. I should definetly consider my inability to create art way more when thinking of a game idea...
+this issue was still troubling me when writing this in 2021 -- i remained too reliant on artists to finish a game. in the future, i should definitely consider my lack of art skills more carefully when choosing a game idea.
 
-## Some cool features
+## some cool features
 
-Enough talking, let's look at some of the cool parts of this project.
+enough talking -- let's take a look at some of the cooler parts of this project.
 
-### Menu's & controller support
+### menus & controller support
 
-![menus](https://i.postimg.cc/PxrgBsdN/LGo-Ax1q0-MY.gif)
+![menus](https://i.imgur.com/3cyIfjP.gif)
 
-The menu's were definetly not finished, but considering how brutally difficult it was to create them in Phaser I'm pretty happy with the flow. There are also some little animations which make it all feel better.
+the menus weren't completely finished, but considering how brutally hard it was to create them in phaser, i'm pretty happy with how they turned out. i even added some little animations that made everything feel smoother.
 
-I also added controller support, through which 2 players could play together. On the top right you can see an icon of a keyboard. If you plug in a controller and press a button you will see a controller icon appear, which would automatically become Player 2.
+i also built controller support so two players could play together. in the top right corner, there's an icon showing a keyboard. when a controller is plugged in and you press a button, a controller icon appears, automatically assigning that controller to player 2.
 
-### Movement & abilities
+### movement & abilities
 
-![movement](https://i.postimg.cc/ZK2yn4gt/hnq-P7-Zd-Tt-X.gif)
+![movement](https://i.imgur.com/jtWBQKr.gif)
 
-The main highlight is obviously the gameplay, which I'm also quite happy with. Code-wise I thought I had a pretty nice approach, where there was one base character class which contained all kinds of actions, like "side light attack", which could then be handled in child classes inheriting from that parent class.
+the highlight was obviously the gameplay itself, which i'm pretty satisfied with. from a coding standpoint, i had a neat approach: a single base character class handled generic actions like "side light attack," and then child classes could inherit and modify these actions individually.
 
-The camera movement also worked pretty nicely I think, and the screenshake and pixel art effects really add to it.
+i also liked how the camera movements worked, and the screenshake and pixel-art effects really added to the feeling.
 
-You have abilities in this game, and after you use one you will see it's icon slowly fade out. While it's fading out it's on cooldown.
+characters had abilities, and after using one, its icon would fade out, indicating a cooldown. additionally, hitting an enemy briefly showed their abilities. i don't exactly remember why i added this -- it probably just looked cool.
 
-If you hit an enemy, you also see their abilities for a short time. I don't remember why I chose to do this, but it probably just looked cool.
+## conclusion
 
-## Conclusion
+it was a cool first project, but sadly i stopped working on it when i couldn't find suitable artists, killing my motivation. at the point i stopped, art was becoming increasingly important, but i just couldn't find anyone who wanted to spend the time creating all the necessary assets -- which i completely understand.
 
-Cool first project that I sadly stopped working on as I didn't find the right artists which killed my motivation. I was getting to a stage where art was really important but I just couldn't find anyone that wanted to put in the time to create all the assets, which I totally understand.
-
-I still think the end result is pretty cool for the time I put into it, and it definetly opened my eyes to how fun game development can be.
+overall, i still think the final result was pretty cool for the time and effort i put in, and it definitely opened my eyes to how much fun game development can be.

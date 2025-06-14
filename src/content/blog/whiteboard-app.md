@@ -1,5 +1,5 @@
 ---
-title: Whiteboard app
+title: whiteboard app
 author: Floris
 featured: false
 draft: false
@@ -7,34 +7,32 @@ tags:
   - web-devevelopment
 pubDatetime: 2021-04-15T20:47:52.756Z
 ogImage: ""
-description: In January of 2020 I worked on what could have been Miro! Just kidding... The idea was very similar though.
+description: in january of 2020 i worked on what could have been Miro! just kidding... The idea was very similar though.
 ---
 
-# Whiteboard App
+in january 2020, i worked on what could’ve been miro. just kidding. kinda.
 
-In January of 2020 I worked on what might have been Miro. Just kidding!
+### introduction
 
-## Table of contents
+it all started when i stumbled upon [paper.js](http://paperjs.org/). it looked super cool and i immediately wanted to build something with it. honestly, it had pretty much everything i needed out of the box. the data types were all there -- I just had to use them to build the app i had in mind.
 
-## Introduction
+at this point, i had just gotten comfortable with [vuejs](https://vuejs.org/). i noticed that because the entire app lived inside one huge `.vue` file. i _was_ planning to split it up into components, but yeah… should’ve done that from the start.
 
-It all started when I found the [Paper.js](http://paperjs.org/) library. I thought it looked very cool and really wanted to build something with it. To be honest, it provided nearly everything I needed for my app. All the data types were present, and I just had to make use of them to create the app I wanted.
+### the idea
 
-At this point I had just gotten the hang of [VueJS](https://vuejs.org/), which I noticed because of the fact that the bulk of the app is inside of one big .vue file. If I remember correctly I was planning on splitting it up into different components, but I should have just done that from the start.
+the concept was to build a whiteboard app where you could create a room that stays active for 24 hours. you’d get a shareable link that you could send to others so you could draw together in real time.
 
-## The idea
+i originally planned to use [websockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) for real-time collaboration, but the backend never got finished.
 
-The plan was to create a whiteboard app, where you can create your own room that stays alive for 24 hours, and generate a shareable link which you can send to other people so you can collaborate.
-
-I originally planned to use [Websockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to make the connection possible, but the entire backend of the app never came to fruition.
-
-I did however create some awesome tools in the front-end, which you can see here.
+what _did_ get built though were some pretty sick front-end tools:
 
 ![collabza_tools](https://i.imgur.com/mfa1woz.gif)
 
-## Downsides of vectors
+### downsides of vectors
 
-I wanted to create some cool pencil tools, and maybe even brushes. But since [Paper.js](http://paperjs.org/) is vector based, anything you draw is made out of points. To save on performance, these points are created sparingly with [Bézier curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) to make everything seem smooth. This is awesome, but the downside is that when you draw or erase things, it's not smooth like it would be in a program like photoshop. You can see what I mean here.
+i wanted to make some fun pencil and brush tools. but since [paper.js](http://paperjs.org/) is vector-based, everything you draw is made up of points. to improve performance, it creates fewer points and connects them with [bézier curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) to make the lines smooth. which is awesome -- until you try to erase.
+
+it’s not like photoshop or other raster-based tools where the eraser just _feels_ right. here’s what i mean:
 
 <util-aligner center>
 
@@ -42,15 +40,17 @@ I wanted to create some cool pencil tools, and maybe even brushes. But since [Pa
 
 </util-aligner>
 
-## Layer system
+### layer system
 
-Another feature I'm quite proud of is the layer system. I store every object in layers, which works just the way you would expect it to coming from programs like photoshop. I guess in hindsight this feature is very useful for creating more complex works instead of the more simple and temporary ones you would expect from a whiteboard app, but I still think it's a really cool feature.
+one of the features i’m most proud of is the layer system. i stored every object in layers -- just like you’d expect if you’ve used photoshop. looking back, this might be a bit overkill for a whiteboard app, which is usually more about quick sketches than complex compositions. still, i think it’s a dope feature.
 
-I also group objects by their type. So you have objects created with the drawing tool, or the shape tool. I planned on adding text and image support, but I stopped working on the app before I could implement those.
+i also grouped objects by their tool type. so objects drawn with the pencil tool were grouped separately from shapes, etc. i wanted to add text and image support too, but never got around to it.
 
 ![collabza_layers](https://i.imgur.com/KgoAx3C.gif)
 
-## Conclusion
+### conclusion
 
-This was a cool project that helped me better understand how [VueJS](https://vuejs.org/) worked. I could have expanded on it quite a lot, but I think the direction I had in mind, which was a drawing program like [Aggie.io](https://aggie.io/) just would not have worked out. I am still very pleased with the design, though!
-You can [check the code here.](https://github.com/floriskappen/collabza-app)
+this was a fun project that really helped me understand how [vuejs](https://vuejs.org/) works. i definitely could’ve taken it further, but the direction i was going in -- like building something similar to [aggie.io](https://aggie.io/) -- probably wasn’t the right fit.
+
+still super happy with the design though.  
+you can [check the code here.](https://github.com/floriskappen/collabza-app)

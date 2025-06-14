@@ -1,5 +1,5 @@
 ---
-title: Three startup ideas
+title: 3 startup ideas
 author: Floris
 featured: false
 draft: false
@@ -7,30 +7,26 @@ tags:
   - web-devevelopment
 pubDatetime: 2021-04-16T20:47:52.756Z
 ogImage: ""
-description: The idea of creating a software startup has always fascinated me. Ofcourse I came to the realisation that it takes more than just a good idea, but that didn't stop me from trying!
+description: "three startup experiments, built back-to-back: from collaborative docs to music reviews and drag-and-drop websites. none made me rich, but all of them taught me more than any course ever could."
 ---
 
-# The three startup ideas
+when i had just turned 16, i registered my first company. i wanted to sell band merch online. i had no clue what i was doing, but i really wanted to just _do something_. it didn’t work out, but it was a fun ride.
 
-When I just turned 16, I registered my first company. I wanted to sell band merchandise online. I had no idea what I was doing, but I wanted to do something. It didn't work out, but was an enjoyable journey nonetheless.
+after that, in 2018, i started a company with a friend where we made websites for small businesses. at that point, i was mostly focused on design and had just started learning how to code. it didn’t last long, but i learned a lot from it.
 
-Afterwards, in 2018 I started a company with a friend. We made websites for small businesses. At this time I was only designing, and just learning how develop. This lasted for a short while, but I learned a lot.
+it’s always been clear that i’ve had big ambitions. and even though none of my early projects led to huge success, they gave me a lot of experience and pushed me to level up my skills while building out my portfolio.
 
-It's clear that I've always had big ambitions. And even though I haven't seen the big results I have once hoped for, it has given me a lot of experience, and the motivation to get my skills to the next level while expanding my portfolio at the same time.
+eventually, i started my own business. this was during the period where i was really motivated to create a startup, even if i had no idea how much work it would actually be. instead of going all-in on one idea, i decided to try a few different ones first. that led to me building three different apps in a pretty short amount of time.
 
-Eventually I started my own business. This was in the period where I really wanted to create a startup, even though I didn't know how much work it would be. I decided that I wanted to try out different ideas before investing all my time in one of them. This lead to me creating three different applications in a short time.
+## doccy — code-less documentation generation
 
-## Table of contents
+doccy was a documentation generator. the idea was inspired by tools like [vuepress](https://vuepress.vuejs.org/), where you configure some settings, create a menu, and then write markdown to generate docs.
 
-## Doccy, code-less documentation generation
+but i thought: why not make this accessible to non-devs too? documentation isn’t just for frameworks and api's.
 
-Doccy is a documentation generation software. The idea came from documentation generators like [VuePress](https://vuepress.vuejs.org/), where after tweaking some settings and creating your menus, you can write documentation with markdown.
+#### login system
 
-I thought it would be nice for non-developers to be able to use this aswell, since documentation is obviously not only useful for frameworks and API's.
-
-#### Login system
-
-While working at [Gravity](https://gravity.nl) I often used the [Strapi](https://strapi.io/) headless CMS. I think it's awesome! So I used that as the back-end of the application. I made simple login & password forgot systems to authenticate users. I wanted to make it usable as quick as possible, so I didn't make a registration system yet.
+while working at [gravity](https://gravity.nl), i often used [strapi](https://strapi.io/), which is a headless cms. i really like it, so i used it for doccy’s backend. i implemented a basic login and password reset flow—just enough to make the app usable quickly. i didn’t add registration yet.
 
 <util-aligner center>
 
@@ -38,67 +34,77 @@ While working at [Gravity](https://gravity.nl) I often used the [Strapi](https:/
 
 </util-aligner>
 
-#### Documentation creation
+#### documentation creation
 
-When you arrive on the dashboard, you are greeted by your Projects, or as I called them, Documentations. We can create a new documentation.
+once you log in, you land on a dashboard that shows your “projects” (which are just different documentations). creating a new one looks like this:
+
 ![doccy-it-new-project](https://i.imgur.com/9GoShLO.gif)
 
-#### Page creation
+#### page creation
 
-Each documentation has different pages, which can be created and edited like so.
+each documentation could have multiple pages, which you could create and edit in the editor.
+
 ![doccy-it-new-page](https://i.imgur.com/XjTDSbk.gif)
 
-There should also be settings for the menu and styling for the docs, but I stopped working on the project before making those. Once you created your documentation the idea was that you could do one of the following:
+there were supposed to be styling and menu options too, but i never got around to building that. the end goal was to let users:
 
-1. Export it to a zip file, to host yourself
-2. Connect with your [Netlify](https://www.netlify.com/) account to deploy it over there.
+1. export docs to a zip and host them manually
+2. connect to [netlify](https://www.netlify.com/) and deploy directly
 
-I implemented the first one, but the second one obviously takes more effort, so I haven't finished that.
+i finished the first one. the second one was more effort, so it stayed on the to-do list.
 
-### Conclusion
+### conclusion
 
-I think this was a pretty interesting idea, but I made the right decision by not continuing with this one. The audience would have been to niche.
+i think this was a solid idea, but i made the right call dropping it. the audience would've been too niche.
 
-## Songrev, an album/single reviewing platform
+## songrev — album & single reviewing platform
 
-As an avid music fan, I like watching reviewers like [Anthony Fantano of The Needle Drop](https://www.youtube.com/user/theneedledrop) make fun of my favorite albums. I also know somebody who writes a lot of reviews for [Sputnik Music](https://www.sputnikmusic.com/). The latter however, is a very old-school website (which I have nothing against, I love old-school web design) with a very active community. I thought that with my awesome (not) UX skills I could make a more user-friendly platform, and on top of that you would already be able to find any artist (if they are listed on Spotify) because I was using the Spotify search API
+i love music, and i also love watching people roast my favorite albums. reviewers like [anthony fantano](https://www.youtube.com/user/theneedledrop) are always entertaining. i also know someone who writes reviews for [sputnik music](https://www.sputnikmusic.com/), which is a super old-school but very active site.
 
-#### Searching system
+i figured i could build a more modern and user-friendly review platform. on top of that, i integrated the spotify search api, so users could search for any artist listed on spotify.
 
-You can search for songs, albums or artists. If it's an artist that hasn't been searched before, I save key details to my database for later use. I need to store things like song or album ID's in order to connect reviews to them. I think this was a very cool idea.
+#### search system
+
+you could search songs, albums, and artists. if an artist wasn’t in my db yet, the app would fetch and store the data from spotify so i could attach reviews to it later. pretty cool system, i think.
+
 ![songrev-search](https://i.imgur.com/YNUGXDK.gif)
 
-#### Popular tracks, related artists
+#### popular tracks & related artists
 
-I also get some other info from Spotify, like an artists popular tracks or related artists. The rating & review systems didn't work yet.
-![songrev-artist](https://i.postimg.cc/2y4bGpZv/xs2-OS3n-P7e.gif)
+i also pulled extra info from spotify, like an artist's most popular tracks and their related artists. the review and rating system wasn't functional yet.
 
-### Conclusion
+![songrev-artist](https://i.imgur.com/8ftznle.gif)
 
-I stopped working on this one pretty soon. I realised there are other platforms like [RateYourMusic](https://rateyourmusic.com/) that do this way better. Plus, such a platform would need a lot of marketing, and I also couldn't think of a good monetization model for it. Still very fun to work with the Spotify API. So much data to work with!
+### conclusion
 
-## Landing Pagr, create landing pages by dragging and dropping components
+i dropped this one pretty early on. i realized there are already platforms like [rateyourmusic](https://rateyourmusic.com/) that do this better. and something like this would need a ton of marketing to get off the ground. also couldn’t figure out a good monetization model. still had fun playing with the spotify api though—there’s so much data to work with.
 
-This is an older idea. Back when I started that company with my friend in 2018, I was searching for inspiration and found this landing page creation app. These days there are hundreds of similar websites, but back then this was one of the only ones I could find. The idea of this app was that you would drag and drop components to create your landing page, and then you could pay the company to create it.
+## landing pagr — drag & drop landing page builder
 
-#### Our version
+this was one of my older ideas. back when i had that small company with a friend in 2018, i stumbled across a landing page app and thought: this is pretty cool. nowadays there are tons of these tools, but back then i could barely find any.
 
-My variation on the idea was to make the landing page immediately exportable, so it would work right out of the box. Remember, this was when I just started to learn how to code, so I didn't really think through all the technical details yet, my friend was the one doing that.
+the idea was that you could drag and drop components to build a landing page. then you’d pay the company to generate the real site.
 
-I build a design but eventually we stopped working on it because it was a really hard first project for me, and I think that friend wasn't feeling like doing it all on his own.
+#### our version
 
-#### What came of it?
+my spin on it was to make the landing page exportable right away, so it’d just work out of the box. keep in mind, this was when i barely knew how to code, so i didn’t think through most of the technical challenges. my friend handled the dev side.
 
-So what was the point of telling this story? Well, eventually, when I started my own company, I created the first version of what would become my website builder, which is the framework this website is made in! That first version however, used Nuxt server-side rendering & Strapi as the CMS, and I would deploy websites in docker through an automated deployment flow I made with GitHub Actions. Pretty cool I think, but extremely expensive!
+i made a design, but eventually we stopped working on it. it was just too hard of a first project, and i think my friend didn’t feel like doing the heavy lifting solo.
 
-My CMS use-case was also too complex for Strapi, as I had many nested components, and I would have liked to have dynamic fields, but that wasn't an option so I just had a lot of fields all over the place. I think this project still deserves a blog post of its' own though.
+#### what came of it?
 
-### Conclusion
+why mention this? because later, when i started my own company, i built the first version of the site builder i still use as of writing this. the early version was built with nuxt (ssr) and strapi as the cms. i had automated deployment set up via github actions, and deployed everything in docker. honestly, it was kinda sick—but also _super_ expensive.
 
-This project really was way too ambitious at the time. I remember I wanted to implement tabs where you could switch between different landing pages, account creation & a payment system to unlock different new perks and components, and way more. With a team of 3 this could probably be done in a couple of sprints, but at the time it was just me designing and my friend developing.
+my cms setup was too complex for strapi. i had loads of nested components and needed dynamic fields, which wasn’t really an option, so i ended up with a bloated mess of fields everywhere. still, i think this version deserves its own blog post one day.
 
-But it did eventually turn into the website building app that I still use today! So that's really cool.
+### conclusion
 
-## Final verdict
+this project was way too ambitious back then. i had plans for tabs to switch between landing pages, user accounts, a payment system for unlocking premium components… it was a lot. with a team of three, this could’ve been done in a few sprints. but at the time, it was just me designing and my friend developing.
 
-I have had many ideas over the years. None of them have made me a millionaire and they were all way too ambitious. But what did I lose? I think nothing, because in the end, what I learned heavily outweighs the time I put into these projects. I worked on them in the evenings after school, and I really did just see it as potential portfolio work. But I have always dreamed of the possibility of me being able to turn one of my projects into a successful startup.
+still, it eventually evolved into the site builder i use as of writing this, so that’s pretty awesome.
+
+## final verdict
+
+i’ve had a lot of ideas over the years. none of them made me rich, and most were probably too ambitious. but what did i lose? honestly—nothing. what i learned from working on these projects easily outweighs the time i spent on them.
+
+i worked on these in the evenings after school, and i always saw them as potential portfolio work. but deep down, i’ve always held onto the dream that one of these ideas might someday turn into something bigger.

@@ -7,7 +7,7 @@ tags:
   - programming
 pubDatetime: 2025-06-14T15:12:00Z
 ogImage: ""
-description: about the period in my life where i gained an unfair advantage to get sold-out concert tickets
+description: i wrote a bot to snipe sold-out concert tickets on ticketswap using proxies and throwaway accounts - then realized the ethical cost of outsmarting the system.
 ---
 
 when a concert is sold out, people (especially in the netherlands) often use ticketswap to find a ticket. this is a secondary ticket marketplace where people resell their tickets if they can't attend anymore.

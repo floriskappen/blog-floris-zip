@@ -1,5 +1,5 @@
 ---
-title: Various learning projects
+title: learning projects
 author: Floris
 featured: false
 draft: false
@@ -7,74 +7,73 @@ tags:
   - web-devevelopment
 pubDatetime: 2021-04-13T20:47:52.756Z
 ogImage: ""
-description: The best way to learn programming is by doing it. Well, it's not that simple. But it does help a lot.
+description: how i learned web dev from scratch by building apis, task managers, chat apps, and more - all powered by curiosity and a very long summer holiday.
 ---
 
-# Learning projects
+in the summer vacation of 2019, i started learning web development. i began following a bunch of udemy courses. since then, i’ve made a few git repos with the projects i built while going through those courses and tutorials.
 
-In the summer vacation of 2019 I started learning Web Development. I started following several Udemy courses. Since then I've created a few git repositories containing some of the projects made when following those courses or tutorials.
+for web dev, this was the perfect way for me to learn. i’m super motivated by building cool things, so this hands-on approach really worked for me. for more theoretical stuff like machine learning, i wouldn’t recommend udemy though. a lot of those courses rely on buzzwords to get your attention, but the actual content is often pretty shallow.
 
-For web development, this was really the perfect way for me to learn. I am motivated by cool projects, so this practical approach is very nice. For more theoretical subjects like machine learning I wouldn't recommend Udemy courses though. There are also a lot of courses out there that use buzzwords to draw you in while the actual content is lacking depth.
+## nodejs learning projects
 
-## Table of contents
+in september 2019, i followed a nodejs course where i built a bunch of small apps to learn about design patterns and best practices.
 
-## NodeJS learning projects
+### weather api interaction
 
-In Sept 2019 I followed a NodeJS course where I worked on a series of small projects to learn about design patterns and best practices.
+in the first project, i built a little script that used weather & geocoding apis. honestly, using existing apis in learning projects is amazing -- it adds so much value without needing to build everything from scratch.
 
-### Weather API interaction
+the app let you enter an address, converted it to latitude/longitude using one api, and then passed that to another api to get the weather forecast.
 
-In the first project of this series, I worked on a small script that interacted with weather & geocoding API's. I think it's very nice to use existing API's for your learning projects as it can add a lot of value without you having to make everything on your own.
+i also learned how to deploy it to [heroku](https://www.heroku.com/), which was cool because i could actually share it with friends.
 
-In this case the app consisted of a page where you can enter an address, which it converts to a latitude and longitude, which it then sends to another API to give the weather forecast for that region.
+### task manager api
 
-I was also taught how to deploy these apps to [Heroku](https://www.heroku.com/) which made it possible to share with others.
+in the next project, i made my own api. the user flow was something like:
 
-### Task manager API
+1. register an account
+2. log in
+3. upload an avatar (optional)
+4. create a new task
+5. fetch all tasks
+6. update task status
 
-In this project I created my own API. The user flow was as follows:
+there were some other smaller features too, but this was the core.  
+i remember struggling with user validation and file uploads. also… i stored avatars as base64 strings in the database, which i definitely wouldn’t do anymore lol. but hey, it worked.
 
-1. You register an account
-2. You log in
-3. You upload an avatar (optional)
-4. Create a new task
-5. Get all tasks
-6. Update the status of a task
+### chatbox app
 
-There were some other features but this was basically it.
+the final project in the course was a chatbox app. sounds fancy, but it was pretty simple. the front-end was provided by the tutor -- my job was to build the api (again, it was a nodejs course).
 
-I remember user validation and uploading files to be the hardest things. Now that I look back, I would never store avatars as a Base64 string in my database anymore, but I guess that was the easiest option for this tutorial.
+you’d type in a room name and a username, and join. everyone in the room would get a message when a new user joined. from there, it worked like a basic chat app.
 
-### Chatbox App
+### conclusion
 
-For the last project of the series I created a chatbox app. It sounds really cool, and it was at the time, but in reality it is really simple. The front-end was given to me by the tutor, the project was just building the API again, as this is was NodeJS course.
+i really enjoy working with nodejs. since i started out as a front-end dev using javascript, picking up back-end stuff felt super natural because it’s the same language.
 
-You would type in the name of a room to join, and type in a username. Once you're in a room, everyone would see that a new user has joined. And then it's the standard behaviour for a chat app.
+## the “complete web developer course”
 
-### Conclusion
+this was my intro to web dev. a general, but actually solid course. it was _long_, but i was so hyped to learn that i just powered through it -- skipping the parts i already knew like html & css.
 
-I love NodeJS, because even though I started as a front-end developer with javascript, it was very easy to learn back-end because it's the same programming language.
+javascript was the real turning point for me. it was really hard at first, but at some point it just clicked and everything started making sense.
 
-## The "Complete Web Developer Course"
+besides javascript, i also got introduced to databases, apis, and even some basic python. but javascript was 100% the highlight for me.
 
-I followed this very general but good web development course. This was actually my first real intro to webdev. It was extremely long, but I was so excited that I blased through it, skipping a few parts I already understood. For example, I could skip the HTML & CSS parts. But I really started learning more about Javascript here, which was awesome.
+## typescript
 
-It was super hard at first but eventually it just clicked, and it went pretty smoothly from there.
+so, at the time of writing this (2021), i don’t use typescript that much. it was cool to learn, and i still remember the core concepts, but i haven’t really felt the need to use it yet. i think it makes more sense for larger-scale projects, and back then i was just working on small personal stuff.
 
-I also learned about databases, what an API was and even the basics of Python. But the Javascript knowledge was the real highlight.
+## react
 
-## Typescript
+i actually started front-end dev with [vue](https://vuejs.org/), and i’m really glad i did. i love that framework. but at the time, [react](https://reactjs.org/) was by far the most popular, so i figured it’d be smart to learn it too.
 
-So at the time of writing this (2021) I don't actually use Typescript that much. I think it was nice to learn it, and I do still remember the core concepts, but even though it's a popular option I haven't really felt the need for it yet. I guess it does make more sense to use it in bigger projects, while the projects I was working on at the time were just small personal ones.
+for this, i built an ecommerce website using [firebase](https://firebase.google.com/) as the backend. pretty cool project. i learned a lot that carried over into my vue work as well.
 
-## React
+one of the cooler things i made in react was a [conway’s game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) app. here’s what it looked like in action:
 
-Front-end development started with [Vue](https://vuejs.org/) for me. And I love that framework, I'm very glad that that's the framework I've learnt first. But at the time, the most popular front-end framework/library was [React](https://reactjs.org/) by far, so I thought I should learn it just in case. For this I created an ecommerce website using [Google's Firebase](https://firebase.google.com/) as my backend. Pretty cool project, from which I learned a lot of things that translated over into [Vue](https://vuejs.org/)!
+![golly](https://i.imgur.com/6CsQHYJ.gif)
 
-A cool project I made in React was this [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) app. You can see it in action here:
+## conclusion
 
-![golly](https://i.postimg.cc/gJp4W4G5/r-Cj-I4g-Dpox.gif)
+i did more courses, but these were the highlights. after learning all this stuff, i started building actual portfolio projects -- which you can still find on this site.
 
-## Conclusion
-
-I followed more web development courses, but these were the highlights for me. After learning a bunch I decided to create some cool projects for my portfolio, which you can check out on this site. I also eventually applied for a part-time job at [Gravity](https://gravity.nl/) where I learned a lot aswell and worked on tons of projects to boost my skills to the next level. That's also where I learned a lot of soft skills, which are very important too. You can't learn those by grinding out Udemy courses!
+i also eventually landed a part-time job at [gravity](https://gravity.nl/) where i learned _so_ much more. not just about tech, but also soft skills, which honestly matter just as much. and yeah, no udemy course is gonna teach you those.

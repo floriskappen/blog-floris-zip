@@ -1,5 +1,5 @@
 ---
-title: Creating a platform for my minigames
+title: creating a platform for my minigames
 author: Floris
 featured: false
 draft: false
@@ -7,71 +7,69 @@ tags:
   - game-development
 pubDatetime: 2022-02-20T20:47:52.756Z
 ogImage: ""
-description: One day while in the shower, I got the idea of starting a project that would combine multiple hobbies of mine into one. Part of it was about creating minigames.
+description: i built a godot-powered platform to host tiny games with accounts, highscores, and a custom backend in fastapi - because one game wasn’t enough.
 ---
 
-_This blog post is a more technical text version of [the video about this project](https://www.youtube.com/watch?v=YH4vsr9XJ8s&)._
+_this blog post is a more technical text version of [the video about this project](https://www.youtube.com/watch?v=YH4vsr9XJ8s&)._
 
-# Creating a platform for my minigames
+for my content creation idea, i planned to build several minigames. since each game would be relatively small, i didn't want to publish each one separately. instead, i decided to build a single platform that i could update whenever a new minigame was released.
 
-As part of my content creation idea, I was planning to build multiple minigames. Since each game would be quite small, I would not want to publish each of them individually. Instead, I decided on building a platform which I can just update each time a new minigame is released.
+### planned features
 
-## Planned features
+the features i wanted to include were:
 
-The features I planned on adding were the following:
+- account management
+  - account registration
+  - login functionality
+  - update account details
+  - password reset (receiving an email with a reset code)
+  - authenticated requests with session tokens
+  - automatic login using session tokens
+- highscore submissions (for logged-in users)
+- viewing top scores per minigame
 
-- Account management
-  - Register an account
-  - Login
-  - Update your account
-  - Reset password (get an email with a code used to reset the password)
-  - Authenticated requests with session token
-  - Automatic login with session token
-- Highscore submission (when logged in)
-- View top scores per minigame
+### the tech stack
 
-## The tech stack
+the minigames themselves would be built with [godot 4.0](https://godotengine.org/), which was still in pre-alpha at the time. from a web-development perspective, the godot games would act as the front-end.
 
-The minigames would be created in [Godot 4.0](https://godotengine.org/) (which is still in pre-alpha at the time of writing this). From a web-development perspective, the Godot game would act as the front-end.
+for the backend (server), i chose python. godot's scripting language is heavily inspired by python, and i prefer using the same language across a project whenever possible. it helps prevent confusion from constantly switching between different languages.
 
-For the back-end, aka the server, I chose to use Python. Godot's main scripting language is heavily inspired by Python and I like to use the same programming language accross the entire project as much as possible if I'm going to be working on all parts as it prevents confusion about switching between different programming languages.
+at my [current job at the time of writing](https://brainial.com/), we use python for the backend and react (js) for the frontend. this occasionally leads me to defining functions incorrectly because i accidentally use syntax from the wrong language when working full-stack.
 
-At my [current job](https://brainial.com/) we use Python in the back-end and React (js) in the front-end. This has often lead to me defining functions wrong often before realising I'm using the syntax of the wrong language whenever I do full-stack work.
+for this backend, i used [fastapi](https://fastapi.tiangolo.com/), a python framework i really enjoy. as for the database, i picked [postgresql](https://www.postgresql.org/).
 
-In the back-end I use a Python framework [FastAPI](https://fastapi.tiangolo.com/) which I really like. For the database I use [PostgreSQL](https://www.postgresql.org/).
+### my experience with godot 4.0 pre-alpha
 
-## My experience with Godot 4.0 pre-alpha
+this project was actually made using nightly builds of godot 4.0, just before the first official pre-alpha was released.
 
-This project was actually made with nightly Godot 4.0 builds but the first pre-alpha was right around the corner.
+i already had a decent amount of experience with godot 3.x. once, i participated in a weekly game jam and created [orbing around](https://kadeflo.itch.io/orbing-around). i've also started a few unfinished projects. one of those had many ui elements, so i was already familiar with building uis in godot. luckily, the ui nodes didn't change much between versions, so transitioning to godot 4.0 was pretty smooth for me.
 
-I already had quite a bit of experience with Godot 3.x. One time I participated in a weekly game jam to create [Orbing Around](https://kadeflo.itch.io/orbing-around) and I also started some other projects a while ago which I have not yet finished. One of these projects had quite a lot of UI elements so I was already familiar with building UI's in Godot. The UI nodes hadn't changed a lot with the new Godot version so it was quite easy for me to work with.  
-I could quite easily implement most of my design elements, with the exception of gradients with rounded corners. As a solution for this I wanted to use shaders, but those were quite broken for 2D nodes at the time. This was the only real issue I ran into while working on the base platform, apart from a few engine crashes.
+i could implement most of my design ideas easily, except for gradients with rounded corners. i planned to use shaders as a workaround, but shaders for 2d nodes were pretty broken at the time. apart from this and a few random engine crashes, things went smoothly.
 
-## API calls in the engine
+### api calls in godot
 
-Every single function that you execute runs on the main thread by default. This means that they are called in sequence. Function B will be executed only when function A has finished executing. The thing about API calls is that you need to wait at least a few milliseconds for a third party service (in my case my back-end) to respond. This would mean short stutters at best and long freezes at worst. So it was pretty obvious that these API calls should not run on the main thread. Instead, they should run in parallel to the rest of the engine, on a separate thread.
+by default, every function you call in godot runs on the main thread, meaning they execute sequentially. function b won’t run until function a finishes. api calls usually take at least a few milliseconds waiting for responses from external services (my backend in this case), causing minor stutters or even complete freezes. clearly, api calls shouldn’t run on the main thread -- they need to run in parallel, on a separate thread.
 
-Thankfully it is quite easy to work with multiple threads in Godot. I did this only once and I didn't fully understand it anymore, but Godot's documentation is awesome and contains lots of examples for everything, including threading. This makes it extremely easy to implement this sort of complicated subject for someone with no experience.
+luckily, handling multiple threads in godot is pretty straightforward. i did it only once and admittedly forgot the details afterward, but godot's documentation is awesome and has plenty of examples, even for complex stuff like threading. this makes it very accessible, even for beginners.
 
-API calls do need a lot of boilerplate code though, but I guess it's not as frequent as API calls in browsers so I get that the feature hasn't received as much attention to make it easily accessible as some other features.
+however, api calls still require a fair bit of boilerplate code. but since api calls aren't as common in godot as they are in browsers, it makes sense that this hasn't gotten as much attention for simplifying the implementation.
 
-## Design
+### design
 
-I find it important to always have an at least decent design. Something that I would personally use. Something that lives up to my standards. Ofcourse this platfrom was pretty simple so it wasn't too hard to design something for it.
+having a decent design from the start is always important to me -- something i'd actually enjoy using. since the platform was pretty straightforward, coming up with a design wasn’t too hard.
 
-_In this gif there is a bug with the input fields caused by me updating the Godot version_
+_in this gif, there's a small input-field bug caused by updating the godot version_
 
 ![design](https://i.postimg.cc/3N9DkJx9/godot-e-JS9k-Hhw-Nh.gif)
 
-The side menu took quite a lot of effort since it contains a lot of tabs. I also find it very important to add animations/transitions as soon as possible because I think that improves the feel of the UI so much. I can't stress enough how important it is for me to have a design that I like as soon as possible. If I don't like the design I might lose motivation for the project.
+the side menu took quite some effort because it had many tabs. i also think it's crucial to add animations and transitions early on, as these greatly improve the ui feel. i genuinely can’t stress enough how important it is for me to have a design i like as soon as possible. if i don’t enjoy how it looks, i easily lose motivation for the entire project.
 
-## Making it public
+### making it public
 
-The platform is not yet public. This is because I have not set up the hosting part of the platform. Also, some small things need tweaking. But the biggest blocker right now is the hosting.  
-I would really love to set up some sort of automatic deployment through GitHub actions. This would also be an interesting topic to make a tutorial on I think, for the Godot part of automatic deployment.
+the platform isn’t public yet. the biggest blocker is hosting -- I still need to set that up. some minor tweaks are also needed. ideally, i'd love to set up automatic deployment using github actions. that could also make a really interesting tutorial topic for godot developers.
 
-## Conclusion
+### conclusion
 
-I have definetly not covered every part of the platform in this short post, but to be honest the rest of the platform is not that special feature-wise or architecture wise. So I only decided to talk about the topics that stood out to me.
+this short post doesn’t cover every detail of the platform. honestly, the remaining parts aren't very special, either feature- or architecture-wise. so i decided to focus only on the standout topics.
 
-I am happy with the platform, it's a great base for all the minigames.
+overall, i'm happy with the platform -- it's a solid foundation for hosting all my minigames.

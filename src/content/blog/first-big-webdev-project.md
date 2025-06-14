@@ -1,5 +1,5 @@
 ---
-title: First big web development project
+title: first big web development project
 author: Floris
 featured: false
 draft: false
@@ -7,63 +7,58 @@ tags:
   - web-devevelopment
 pubDatetime: 2021-04-14T20:47:52.756Z
 ogImage: ""
-description: After learning the basics of web dev, I started working on my first big project. It's cool enough to share.
+description: "my first real web app: a fully-featured to-do list with social sharing, productivity tools, and even a friend system - built before i fully understood how ambitious that was."
 ---
 
-# First big project
+on 7 sept 2019, after finishing my first web development courses, i wanted to put my newly acquired skills to use. i decided to build one of the classic "first projects": a to-do app. but i wanted to think of every cool feature i could possibly want in a to-do application and integrate them all.
 
-On 7 Sept of 2019, after finishing my first web development courses, I wanted to put my newly acquired skills to use. So I decided to make one of the standard "first projects": A to-do application. But I would try and think of all the cool features I would want in a to-do app and integrate it.
+### login & dashboard
 
-## Table of contents
+since it was a web app, users needed an account to save their todos. after logging in, they'd see a nice dashboard featuring cool stats and quick links to their recent todos.
 
-## Login & Dashboard
+the next step would be creating their first list. think of lists as folders that can hold multiple todos. each list could be customized with a color and icon, and even shared with other users. yes, this todo app had a sharing system. honestly, i'm still surprised i managed to pull that off!
 
-This was a web app, so in order to have persistent todo's users needed to register an account. After logging in they would see a nice dashboard with some cool stats and links to their recent todo's.
-
-The next step in the user journey would be to create their first list. This can be seen as a folder, containing multiple todos. They can customize the list with a color, an icon and share it with others. Yes, this todo app had a sharing system. I'm suprised I managed to pull that off!
 ![Dashboard](https://i.postimg.cc/gjLnH8Rz/Xe-QPWH70lr.gif)
 
-## Todo creation
+### todo creation
 
-Creating a todo is easy. After selecting a list, you can click the plus icon on the lower right to create a new todo. A todo has a title, description, privacy settings, an expiry date and more. You can also select multiple "completion types".
+creating a todo was straightforward. after selecting a list, you'd click the plus icon in the bottom-right corner to add a new todo. each todo had a title, description, privacy settings, expiry date, and more. you could even choose between different completion methods.
 
-The default would be to just check the todo off, but sometimes you might need a percentage slider or an increment button.
+the default was simply checking off a task, but sometimes you might need a percentage slider or increment button instead.
 
 ![Create todo](https://i.postimg.cc/TwzWStTL/s-Aqvpfludw.gif)
 
-## Search system
+### search system
 
-There is a cool universal search bar, which you can use to search todo's, lists and even friends. I think universal search bars are extremely useful, and I'm happy with my implementation.
+i also implemented a universal search bar, letting users quickly find todos, lists, and even friends. i genuinely think universal search bars are extremely useful, and i was pretty happy with how mine turned out.
 
 ![Search](https://i.postimg.cc/RCGBgNG9/y8-GMb-C2-JEU.gif)
 
-## Productivity tools
+### productivity tools
 
-To help you finish your todo items, I also added a productivity tool. There are two settings: Pomodoro Timer & Do-it-now.
+to help users actually finish their todos, i included a couple of productivity tools: the pomodoro timer and the "do-it-now" mode.
 
-The Pomodoro Technique is created by Francesco Cirillo for a more productive way to work and study. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks.
+the pomodoro technique, created by francesco cirillo, breaks work into focused intervals (usually 25 minutes) with short breaks between them.
 
-The Do-it-now setting is derived from the idea that if a task takes less than 5 minutes to do, you should do it immediately.
+the "do-it-now" mode was inspired by the simple idea that if a task takes less than five minutes, you should do it immediately.
 
 ![Productivity](https://i.postimg.cc/RZKpbY9f/2-J5-XNpig4-J.gif)
 
-## Social systems
+### social systems
 
-I also tried to implement a social system. Every todo or list you create can be public, friend-only or private. Public means anyone that searches for your username can see the list/todo, while friend-only means that only people you have added to your friend list can see the todo.
+another ambitious feature was a social system. every todo or list could be set to public, friends-only, or private. public meant anyone searching your username could see it, friends-only meant only users on your friends list could view it.
 
-You can search for people and send them a friend request. They will receive a notification, and if they accept they will be on your friends list.
+users could search for each other and send friend requests, generating notifications that allowed the receiver to accept or ignore. you could also share todos and lists directly by inviting people to collaborate. invited users would get a notification and could accept or decline. only the original creator could manage collaborators -- I never implemented roles, but honestly, that would’ve probably been overkill anyway.
 
-You can share lists and todo's aswell, which is really useful. When creating or editing a list or todo, you can invite people to collaborate with. They will receive a notification where they can accept or ignore the invitation. Only the creator of the todo can manage with who it is shared. I never implemented a role system, and I think it would have been kind of overkill anyway.
+### design
 
-## Design
+at the time, i was really into design, and as you can see, i put quite a bit of care into the app's visuals. years later, i still think it looks pretty great!
 
-At this point I was really into design, and as you can see I put a lot of care into it for this application. I still think it looks great years later!
+writing this post in 2021, my focus has shifted more toward technical aspects rather than pure design, since that aligns better with my goals now. but this project remains something i'll always be proud of. as a quick note: the flat artwork and icons throughout the app weren't designed by me.
 
-While writing this post in 2021, I am less focussed on design and more on technique, as I think it fits my goals better. But this project is something I will always be proud of! It's good to know that I didn't design the flat artwork and icons you see throughout the app.
+### conclusion
 
-## Conclusion
-
-Even though I never published it, because my motivation ran out and it was just a learning project, I think the end result is something to be proud of, given the fact that I just learned programming. It is the first web dev project I put a lot of time into. It was made in a period of 3 months working ~1.5 hour a day on it on average.
+although i never published this project (my motivation ran out and it was purely for learning anyway), i still think the final result is something to be proud of—especially considering i'd just started learning to program. this was the first web development project that i put significant time into. i worked on it for about three months, averaging around 1.5 hours per day.
 
 <get-related-articles category="WEB DEV" link-text="Read more">
 </get-related-articles>
